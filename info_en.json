@@ -2,28 +2,69 @@
 	"name": "test1",
 	"title": "The Best Applet Ever!",
 	"icon": "eye_of_sauron.png",
-	"version": [
-		{"1.0": ["2-2-2", "2-2-3"]},
-		{"1.1": ["2-2-3"]}
+        "latest": "1.1",
+	"versions": [
+		"1.0",
+		"1.1"
 	],
-	"author": "J.R.R Tolkien",
-	"info": {
-		"description": "<p>The <b>HTML</b> supported!</p>",
-		"url": "https://www.mordor.com",
-		"usage": "Drop the applet into the volcano."
-	}
+        "builds": {
+                "1.0": ["2-2-2", "2-2-3"],
+		"1.1": ["2-2-3"]
+        },
+	"author": "Nwe Author",
+	"description": "<p>The <b>HTML</b> supported! Long description with so much info in it. Let's just suppose its the <i>longest<i> description in the universe.<br><ul><li>first</li><li>second</li></ul><br><br>Line break 2x.</p>",
+	"url": "https://www.mordor.com",
+	"usage": "Drop the applet into the volcano."
 }, {
 	"name": "test2",
 	"title": "The Best Applet Ever!",
-	"icon": "prase.png",
-	"version": [
-		{"1.5": ["2-2-2", "2-2-3"]},
-		{"1.6": ["2-2-3"]}
-	],
+ 	"icon": "prase.png",
+        "latest": "1.6",
+        "versions": [
+		"1.5", 
+                "1.6"
+  	],
+        "builds": {
+                "1.5": ["2-2-2", "2-2-3"],
+		"1.6": ["2-2-3"]
+        },
 	"author": "Já",
-	"info": {
-		"description": "<p>The <b>HTML NOT</b> supported!</p>",
-		"url": "https://www.mordor.com",
-		"usage": "Install"
-	}
+	"description": "<p>The <b>HTML NOT</b> supported!</p>",
+	"url": "https://www.mordor.com",
+	"usage": "Install"
+}, {
+	"name": "test3",
+	"title": "Too longlonglonglnognlngo name to even be able to display, dumbass.",
+	"icon": "noimage-missing.png",
+        "latest": "1.5",
+	"versions": [
+		"1.5"
+	],
+        "builds": {
+                "1.5": ["2-2-2", "2-2-3"]
+        },
+	"author": "Another long author name",
+	"description": "<p>The <b>HTML NOT</b> supported!</p>",
+	"url": "https://www.mordor.com",
+	"usage": "Install"
+
+}, {
+	"name": "test4",
+	"title": "Short",
+	"icon": "noimage-missing.png",
+        "latest": "2.8",
+	"versions": [
+		"1.8",
+                "1.9",
+                "2.8"
+	],
+        "builds": {
+		"1.8": ["2-2-2", "2-2-3"],
+                "1.9": ["2-2-2", "2-2-3"],
+                "2.8": ["2-2-2", "2-2-3"]
+	},
+	"author": "short",
+	"description": "<p>The <b>HTML NOT</b> supported!</p>",
+	"url": "https://www.mordor.com",
+	"usage": "Install"	
 }]

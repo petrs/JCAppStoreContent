@@ -1,70 +1,63 @@
 [{
-	"name": "test1",
-	"title": "The Best Applet Ever!",
-	"icon": "eye_of_sauron.png",
-        "latest": "1.1",
+	"name": "JCAlgTest",
+	"title": "JCAlgTest",
+	"icon": "jcalgtest.png",
+  "latest": "1.7.5",
 	"versions": [
-		"1.0",
-		"1.1"
+		"1.2", "1.2.1", "1.3", "1.6", "1.6.1", "1.7", "1.7.1", "1.7.2", "1.7.3", "1.7.4", "1.7.5"
 	],
-        "builds": {
-                "1.0": ["2-2-2", "2-2-3"],
-		"1.1": ["2-2-3"]
-        },
-	"author": "Nwe Author",
-	"description": "<p>The <b>HTML</b> supported! Long description with so much info in it. Let's just suppose its the <i>longest<i> description in the universe.<br><ul><li>first</li><li>second</li></ul><br><br>Line break 2x.</p>",
-	"url": "https://www.mordor.com",
-	"usage": "Drop the applet into the volcano."
+  "builds": {
+    "1.2": ["2.1.2", "2.2.1", "2.2.2"], 
+    "1.2.1": ["2.1.2", "2.2.1", "2.2.2", "3.0.2", "3.0.4"], 
+    "1.3": ["2.1.2", "2.2.1", "2.2.2", "3.0.2", "3.0.4"], 
+    "1.6": ["2.2.2"], 
+    "1.6.1": ["2.2.1", "2.2.2"], 
+    "1.7": ["2.2.2"], 
+    "1.7.1": ["2.2.1", "2.2.2"], 
+    "1.7.2": ["2.2.2"], 
+    "1.7.3": ["2.2.2"], 
+    "1.7.4": ["2.2.2"], 
+    "1.7.5": ["2.2.2"]
+  },
+	"author": "CRoCS",
+	"description": "<p>Automated testing tool for algorithms supported by particular smart card with JavaCard platform.<br><br><i>Contribution with results for YOUR card is wanted! (and highly appreciated :))</i></p>",
+	"url": "https://www.fi.muni.cz/~xsvenda/jcalgtest/",
+	"usage": "<p>Install this applet on the card you want to test. You can install default (newest version and latest sdk). If the install fails, choose different, older sdk version as the card might not support it.<br><br><br>Run Java application AlgTestJClient. You need to download this application for your pc from GitHub (https://github.com/crocs-muni/JCAlgTest/releases). Once you download the application (AlgTestJClient.jar file inside zip release), and the card is plugged in, open command line (windows ctrl+R and type cmd). Navigate to the folder where you have downloaded the file and run following command: <b>java -jar AlgTestJClient.jar</b>. On Linux you might need to set the smartcardio library, for example use: 'java -Dsun.security.smartcardio.library=/usr/lib64/libpcsclite.so.1 -jar AlgTestJClient.jar'<br><br>Choose the target reader for card with uploaded AlgTest applet and let it run. Now new CSV file with values separated by the semicolon is created (AlgTest_ATR.csv).<br><br><br>Please consider to send us (petr@svenda.com) your results in case your card is not yet in the database at https://www.fi.muni.cz/~xsvenda/jcalgtest/</p><br><br><br>How to navigate in command line: use <b> cd [foldername you want to enter]</b> and <b>dir</b> on windows or <b>ls</b> on linux to display current foler content. Enclose the foldername in \" characters if any space is present.",
+  "keys": false,
+  "host_app": true
 }, {
-	"name": "test2",
-	"title": "The Best Applet Ever!",
- 	"icon": "prase.png",
-        "latest": "1.6",
-        "versions": [
-		"1.5", 
-                "1.6"
-  	],
-        "builds": {
-                "1.5": ["2-2-2", "2-2-3"],
-		"1.6": ["2-2-3"]
-        },
-	"author": "Já",
-	"description": "<p>The <b>HTML NOT</b> supported!</p>",
-	"url": "https://www.mordor.com",
-	"usage": "Install"
-}, {
-	"name": "test3",
-	"title": "Too longlonglonglnognlngo name to even be able to display, dumbass.",
-	"icon": "noimage-missing.png",
-        "latest": "1.5",
+	"name": "YkneoOpenPGP",
+	"title": "YubiKey NEO App: OpenPGP",
+	"icon": "ykneoopenpgp.png",
+  "latest": "1.0.2",
 	"versions": [
-		"1.5"
+		"1.0.2"
 	],
-        "builds": {
-                "1.5": ["2-2-2", "2-2-3"]
-        },
-	"author": "Another long author name",
-	"description": "<p>The <b>HTML NOT</b> supported!</p>",
-	"url": "https://www.mordor.com",
-	"usage": "Install"
-
+  "builds": {
+    "1.0.2": ["2.2.1", "2.2.2"] 
+  },
+	"author": "Yubico",
+	"description": "<p>This project implement the OpenPGP card functionality used on the YubiKey NEO device that is sold by Yubico.<br><br>This project is based on the Java Card OpenPGP Card project made by Joeri de Ruiter. The initial modifications we have made compared to the upstream project are minor, but we reserve the right to make other changes and improvements that are specific to the YubiKey NEO hardware.<br><br><b>License:</b> The upstream project was released under the GPLv2+ and our fork uses the same license. All of our changes are released under the same license. More on the website.</p>",
+	"url": "https://developers.yubico.com/ykneo-openpgp/",
+	"usage": "<p>The OpenPGP Card applet is typically used through GnuPG (https://www.gnupg.org/) so we refer to its documentation for the full reference. The default PIN set is <b>`123456'</b> and the default admin PIN is <b>`12345678'</b>. We have tutorials on specific topics in at developers.yubico.com/PGP, for example card editing and key import.",
+  "keys": true,
+  "host_app": false
 }, {
-	"name": "test4",
-	"title": "Short",
-	"icon": "noimage-missing.png",
-        "latest": "2.8",
+	"name": "OpenFIPS201",
+	"title": "OpenFIPS201",
+	"icon": "unknown",
+  "latest": "1.0.1",
 	"versions": [
-		"1.8",
-                "1.9",
-                "2.8"
+		"1.0.0", 	"1.0.1"
 	],
-        "builds": {
-		"1.8": ["2-2-2", "2-2-3"],
-                "1.9": ["2-2-2", "2-2-3"],
-                "2.8": ["2-2-2", "2-2-3"]
-	},
-	"author": "short",
-	"description": "<p>The <b>HTML NOT</b> supported!</p>",
-	"url": "https://www.mordor.com",
-	"usage": "Install"	
+  "builds": {
+    "1.0.0": ["2.2.2"],
+    "1.0.1": ["2.2.2"]
+  },
+	"author": "Kim O'Sullivan",
+	"description": "<p>This project has been commissioned and funded by the Australian Department of Defence, to provide an open source implementation of the card application for the NIST Personal Identity Verification (PIV) standard as specified by FIPS PUB 201-2 and SP800-73-4.<br><br>To get started, please head on over to the OpenFIPS201 Wiki (https://github.com/makinako/OpenFIPS201/wiki)</p>",
+	"url": "https://github.com/makinako/OpenFIPS201/wiki",
+	"usage": "<p>First, check that your card has met the requirements: <br><br>1) Javacard SDK 2.2.2 or above. <br>2) GlobalPlatform 2.1.1 or above <br>3) A minimum of 12-15KB of EEPROM and 512 bytes of CLEAR_ON_RESET transient memory (RAM) <br><br>For more info ask your vendor. <br><br> Another applet personalisation is avaliable, you can use our 'RAW APDU' feature, here are some examples, for more info check the documentation displayed above.</p><div class=\"code\"># CHANGE KEY = 9B, Mechanism = 03 (TDEA192)<br>00 24 03 9B 1C 30 20 80 18 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25 26 27<br><br># CHANGE PIN (80) to value 123456<br>00 24 FF 80 08 31 32 33 34 35 36 FF FF<br><br># CHANGE PUK (81) to value 12345678<br>00 24 FF 81 08 31 32 33 34 35 36 37 38</div>",
+  "keys": true,
+  "host_app": false
 }]

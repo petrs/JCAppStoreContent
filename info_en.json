@@ -24,7 +24,7 @@
 	"url": "https://www.fi.muni.cz/~xsvenda/jcalgtest/",
 	"usage": "<p>Install this applet on the card you want to test. You can install default (newest version and latest sdk). If the install fails, choose different, older sdk version as the card might not support it.<br><br><br>Run Java application AlgTestJClient. You need to download this application for your pc from GitHub (https://github.com/crocs-muni/JCAlgTest/releases). Once you download the application (AlgTestJClient.jar file inside zip release), and the card is plugged in, open command line (windows ctrl+R and type cmd). Navigate to the folder where you have downloaded the file and run following command: <b>java -jar AlgTestJClient.jar</b>. On Linux you might need to set the smartcardio library, for example use: 'java -Dsun.security.smartcardio.library=/usr/lib64/libpcsclite.so.1 -jar AlgTestJClient.jar'<br><br>Choose the target reader for card with uploaded AlgTest applet and let it run. Now new CSV file with values separated by the semicolon is created (AlgTest_ATR.csv).<br><br><br>Please consider to send us (petr@svenda.com) your results in case your card is not yet in the database at https://www.fi.muni.cz/~xsvenda/jcalgtest/</p><br><br><br>How to navigate in command line: use <b> cd [foldername you want to enter]</b> and <b>dir</b> on windows or <b>ls</b> on linux to display current foler content. Enclose the foldername in \" characters if any space is present.",
   "keys": false,
-  "default_selected": true,
+  "default_selected": false,
   "pgp": "",
   "signed_by": ""
 }, {

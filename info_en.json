@@ -1,4 +1,8 @@
 [{
+   "type": "category",
+   "title": "Utilities"
+}, {
+    "type": "applet",
 	"name": "JCAlgTest",
 	"title": "JCAlgTest",
 	"icon": "jcalgtest.png",
@@ -22,12 +26,17 @@
 	"author": "CRoCS",
 	"description": "<p>Automated testing tool for algorithms supported by particular smart card with JavaCard platform.<br><br><i>Contribution with results for YOUR card is wanted! (and highly appreciated :))</i></p>",
 	"url": "https://www.fi.muni.cz/~xsvenda/jcalgtest/",
-	"usage": "<p>Install this applet on the card you want to test. You can install default (newest version and latest sdk). If the install fails, choose different, older sdk version as the card might not support it.<br><br><br>Run Java application AlgTestJClient. You need to download this application for your pc from GitHub (https://github.com/crocs-muni/JCAlgTest/releases). Once you download the application (AlgTestJClient.jar file inside zip release), and the card is plugged in, open command line (windows ctrl+R and type cmd). Navigate to the folder where you have downloaded the file and run following command: <b>java -jar AlgTestJClient.jar</b>. On Linux you might need to set the smartcardio library, for example use: 'java -Dsun.security.smartcardio.library=/usr/lib64/libpcsclite.so.1 -jar AlgTestJClient.jar'<br><br>Choose the target reader for card with uploaded AlgTest applet and let it run. Now new CSV file with values separated by the semicolon is created (AlgTest_ATR.csv).<br><br><br>Please consider to send us (petr@svenda.com) your results in case your card is not yet in the database at https://www.fi.muni.cz/~xsvenda/jcalgtest/</p><br><br><br>How to navigate in command line: use <b> cd [foldername you want to enter]</b> and <b>dir</b> on windows or <b>ls</b> on linux to display current foler content. Enclose the foldername in \" characters if any space is present.",
+        "url": {
+          "Repository": "https://github.com/crocs-muni/JCAlgTest",
+	  "Official webpage": "https://www.fi.muni.cz/~xsvenda/jcalgtest/"
+        },
+	"usage": "<p>The installation should be simple without any required information. Install this applet on the card you want to test. You can install default (newest version and latest sdk). If the install fails, choose different, older sdk version as the card might not support it.<br><br><br>Run Java application AlgTestJClient. You need to download this application for your pc from GitHub (https://github.com/crocs-muni/JCAlgTest/releases). Once you download the application (AlgTestJClient.jar file inside zip release), and the card is plugged in, open command line (windows ctrl+R and type cmd). Navigate to the folder where you have downloaded the file and run following command: <b>java -jar AlgTestJClient.jar</b>. On Linux you might need to set the smartcardio library, for example use: 'java -Dsun.security.smartcardio.library=/usr/lib64/libpcsclite.so.1 -jar AlgTestJClient.jar'<br><br>Choose the target reader for card with uploaded AlgTest applet and let it run. Now new CSV file with values separated by the semicolon is created (AlgTest_ATR.csv).<br><br><br>Please consider to send us (petr@svenda.com) your results in case your card is not yet in the database at https://www.fi.muni.cz/~xsvenda/jcalgtest/</p><br><br><br>How to navigate in command line: use <b> cd [foldername you want to enter]</b> and <b>dir</b> on windows or <b>ls</b> on linux to display current foler content. Enclose the foldername in \" characters if any space is present.",
   "keys": false,
   "default_selected": false,
   "pgp": "",
   "signed_by": ""
 }, {
+    "type": "applet",
 	"name": "JCMemory",
 	"title": "JCMemory",
 	"icon": "jcmem.png",
@@ -40,13 +49,19 @@
   },
 	"author": "CRoCS",
 	"description": "<p>Small applet for card memory analysis. Can obtain the amount of free memory space on given cards, which enables us to predict installation failures because of low memory.</p>",
-	"url": "",
-	"usage": "This applet is used by JCAppStore natively. You can obtain the free memory space available in 'File' menu item. The check is also performed on an applet installation.",
+	"url": {
+          
+        },
+	"usage": "The installation should be simple without any required information. This applet is used by JCAppStore natively. You can obtain the free memory space available in 'File' menu item. The check is also performed on an applet installation.",
   "keys": false,
   "default_selected": false,
   "pgp": "",
   "signed_by": ""
 }, {
+   "type": "category",
+   "title": "OpenPGP Card Applets"
+}, {
+    "type": "applet",
 	"name": "YkneoOpenPGP",
 	"title": "YubiKey NEO App: OpenPGP",
 	"icon": "ykneoopenpgp.png",
@@ -58,9 +73,65 @@
     "1.0.2": ["2.2.1", "2.2.2"] 
   },
 	"author": "Yubico",
-	"description": "<p>This project implement the OpenPGP card functionality used on the YubiKey NEO device that is sold by Yubico.<br><br>This project is based on the Java Card OpenPGP Card project made by Joeri de Ruiter. The initial modifications we have made compared to the upstream project are minor, but we reserve the right to make other changes and improvements that are specific to the YubiKey NEO hardware.<br><br><b>License:</b> The upstream project was released under the GPLv2+ and our fork uses the same license. All of our changes are released under the same license. More on the website.</p>",
-	"url": "https://developers.yubico.com/ykneo-openpgp/",
-	"usage": "<p>The usage - altough with host application - may be difficult if you are not used to work with command line. (see the turorials in link below). The OpenPGP Card applet is typically used through GnuPG (https://www.gnupg.org/) so we refer to its documentation for the full reference. The default PIN set is <b>`123456'</b> and the default admin PIN is <b>`12345678'</b>. We have tutorials on specific topics in at developers.yubico.com/PGP, for example card editing and key import. <br><br> How to change your admin pin step by step: <ol><li>Download GnuPG (this is used by JCAppStore as well, so you probably have it)</li><li>Use command line to launch GnuPG in card edit mode: <b>gpg --card-edit</b></li><li>enter command <b>admin</b> to enable utility tools</li><li>enter command <b>passwd</b> to change your admin PIN</li></ol><br />Upload your private key to the card (<b> this is destructive action!</b>)<ol><li>use <b>gpg --list-keys</b> to see which keys you have available</li><li> type in <b>gpg --edit-key [key id]</b> where key id is an id for the key you want to move (id select from previous command)</li><li>use <b>toggle</b> to switch to the private key part</li><li> use <b>keytocard</b> to upload the private key part onto card <i>destructively</i></li><li>follow the GnuPG instructions</li></ol><br> That's it! For more info about available commands in card edit mode type <b>help</b>. Unfortunately, only RSA keys up to 1024 bit length are supported. <br> Full tutorials are available at <u>https://www.gnupg.org/documentation/guides.html</u>. <br><br> We recommend to search for 'GnuPG [action I want to do]' rather than reading the documentation, for example 'gnupg.org import key to card' yields <u>https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/</u>.",
+	"description": "<p>This project implement the OpenPGP card functionality used on the YubiKey NEO device that is sold by Yubico.<br><br>This project is based on the Java Card OpenPGP Card project made by Joeri de Ruiter. The initial modifications we have made compared to the upstream project are minor, but we reserve the right to make other changes and improvements that are specific to the YubiKey NEO hardware.<br><br><b>License:</b> The upstream project was released under the GPLv2+ and our fork uses the same license. All of our changes are released under the same license. More on the website.</p><p><b>You can have only one applet from OpenPGP Card Applets category installed on your card.</b></p>",
+        "url": {
+          "Repository": "https://github.com/ANSSI-FR/SmartPGP",
+	  "Guides": "https://developers.yubico.com/ykneo-openpgp/",
+          "GnuPG host" : "https://gnupg.org/download/index.html"
+        },
+	"usage": "<p>The installation should be simple without any required information. However, the applet uses advanced functionality and some older cards will not be able to install it. The usage - altough with host application - may be difficult if you are not used to work with command line. (see the turorials in link below). The OpenPGP Card applet is typically used through GnuPG (https://www.gnupg.org/) so we refer to its documentation for the full reference. The default PIN set is <b>`123456'</b> and the default admin PIN is <b>`12345678'</b>. We have tutorials on specific topics in at developers.yubico.com/PGP, for example card editing and key import. <br><br> How to change your admin pin step by step:</p> <ol><li>Download GnuPG (this is used by JCAppStore as well, so you probably have it)</li><li>Use command line to launch GnuPG in card edit mode: <b>gpg --card-edit</b></li><li>enter command <b>admin</b> to enable utility tools</li><li>enter command <b>passwd</b> to change your admin PIN</li></ol><br />Upload your private key to the card (<b> this is destructive action!</b>)<ol><li>use <b>gpg --list-keys</b> to see which keys you have available</li><li> type in <b>gpg --edit-key [key id]</b> where key id is an id for the key you want to move (id select from previous command)</li><li>use <b>toggle</b> to switch to the private key part</li><li> use <b>keytocard</b> to upload the private key part onto card <i>destructively</i></li><li>follow the GnuPG instructions</li></ol><br> That's it! For more info about available commands in card edit mode type <b>help</b>. Full tutorials are available at <u>https://www.gnupg.org/documentation/guides.html</u>. <br><br><p> We recommend to search for 'GnuPG [action I want to do]' rather than reading the documentation, for example 'gnupg.org import key to card' yields <u>https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/</u>.</p>",
+  "keys": true,
+  "default_selected": false,
+  "pgp": "",
+  "signed_by": ""
+}, {
+    "type": "applet",
+	"name": "AnssiSmartPGP",
+	"title": "Smart PGP",
+	"icon": "anssi-fr.png",
+  "latest": "1.13",
+	"versions": [
+		"1.13"
+	],
+  "builds": {
+    "1.13": ["3.0.4"] 
+  },
+	"author": "ANSSI",
+	"description": "<p>SmartPGP is a free and open source implementation of the OpenPGP card 3.4 specification in JavaCard. <h3>Features</h3>The following features are implemented at the applet level, but some of them depend on underlying hardware support and available (non-)volatile memory resources:</p><ul><li>RSA (>= 2048 bits modulus, 17 bits exponent) and ECC (NIST P-256, NIST P-384, NIST P-521, brainpool p256r1, brainpool p384r1 and brainpool p512r1) for signature, encryption and authentication;</li><li>On-board key generation and external private key import;</li><li>PIN codes (user, admin and resetting code) up to 127 characters;</li><li>Certificate up to 1 kB (DER encoded) for each key;</li><li>Login, URL, and private DOs up to 256 bytes;</li><li>Command and response chaining;</li><li>AES 128/256 bits deciphering primitive;</li><li>Secure messaging (see below).</li></ul><p><b>You can have only one applet from OpenPGP Card Applets category installed on your card.</b></p>",
+	"url": {
+          "Repository": "https://github.com/ANSSI-FR/SmartPGP",
+          "GnuPG host" : "https://gnupg.org/download/index.html",
+          "OpenKeychain host" : "https://play.google.com/store/apps/details?id=org.sufficientlysecure.keychain"
+        },
+	"usage": "<p>You are required to change two \"AFAF\" bytes of AID D276000124010304<b>AFAF</b>000000000000 in the advanced install dialog window section. These two bytes should correspond to the OpenPGPCard identifier of your card manufacturer (ask your vendor for this information). If the card manufacturer does not have the ID assigned, you cannot use this applet. These The applet uses advanced functionality and some older cards will not be able to install it.</p><h2>Default values</h2><p>The SmartPGP applet is configured with the following default values:</p><ul>Admin PIN is 12345678;</li><li>User PIN is 123456;</li><li>No PUK (a.k.a. resetting code) is defined;</li><li>RSA 2048 bits for PGP keys;</li><li>NIST P-256 for the secure messaging key.</li></ul><br><h2>Host applications</h2><p>There are two host applications available. You can use this applet in GnuPG (similarly as the Yubico OpenPGP applet), or in OpenKeychain.<br><h3>GnuPG</h3><p>Supported starting from GnuPG version 2.1.16. The specific secure messaging of the SmartPGP applet is not supported at is not part of the OpenPGP card specification.</p><p> How to change your admin pin step by step:</p> <ol><li>Download GnuPG (this is used by JCAppStore as well, so you probably have it)</li><li>Use command line to launch GnuPG in card edit mode: <b>gpg --card-edit</b></li><li>enter command <b>admin</b> to enable utility tools</li><li>enter command <b>passwd</b> to change your admin PIN</li></ol><br />Upload your private key to the card (<b> this is destructive action!</b>)<ol><li>use <b>gpg --list-keys</b> to see which keys you have available</li><li> type in <b>gpg --edit-key [key id]</b> where key id is an id for the key you want to move (id select from previous command)</li><li>use <b>toggle</b> to switch to the private key part</li><li> use <b>keytocard</b> to upload the private key part onto card <i>destructively</i></li><li>follow the GnuPG instructions</li></ol><br> That's it! For more info about available commands in card edit mode type <b>help</b>. Full tutorials are available at <u>https://www.gnupg.org/documentation/guides.html</u>. <br><br><p> We recommend to search for 'GnuPG [action I want to do]' rather than reading the documentation, for example 'gnupg.org import key to card' yields <u>https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/</u>.</p><h3>OpenKeychain</h3><p>Supported starting from OpenKeychain version 4.2. The secure messaging of the SmartPGP applet is fully supported in OpenKeychain. See the section below for more information on the setup process.</p>",
+  "keys": true,
+  "default_selected": false,
+  "pgp": "",
+  "signed_by": ""
+}, {
+   "type": "category",
+   "title": "Identity Applets"
+}, {
+    "type": "applet",
+	"name": "VletouxGidsApplet",
+	"title": "GIDS Applet",
+	"icon": "",
+  "latest": "1.3",
+	"versions": [
+		"1.3"
+	],
+  "builds": {
+    "1.3": ["2.2.1"] 
+  },
+	"author": "Vletoux",
+	"description": "<p>Generic Identity Device Specification (GIDS) smart card is the only PKI smart card whose driver is integrated on each Windows since Windows 7 SP1 and which can be used read and write. No Windows driver installation is required and this card can be used instantly.</p><p>My Smart Logon (link below) is providing free of charge a javacard applet to transform a java card into a GIDS smart card and its integration in OpenSC for other operating systems (Linux, MacOSX, …).</p>",
+	"url": {
+          "Repository": "https://github.com/vletoux/GidsApplet",
+          "Card Initalization": "https://www.mysmartlogon.com/download/",
+          "OpenSC tool": "https://github.com/OpenSC/OpenSC/releases",
+          "Win-only step-by-steps": "https://confluence.certgate.com/label/DEMTHSP/gids"
+        },
+	"usage": "<p>The installation should be simple without any required information. All necessary links are provided below. There are many host applications and many tools to work with, but the actual usage is pretty difficult. Fortunately, if you look enough there are plenty websites that offer solutions. We list some of them.</p><h3>Card Initialization</h3><p>To easy setup the applet, download GIDS Initialization tool. Run in only once! If you are advanced user and prefer to do things yourself, follow <u>https://github.com/OpenSC/OpenSC/wiki/Quick-Start-with-OpenSC</u> tutorial how to initialize the card using OpenSC (command line only).</p><h3>Applet usage</h3><p>Download OpenSC tool (command line only) for your operating system to further setup and manage your applet (for example load cerificates). For more info on OpenSC, read the WIKI on the repository page.</p><p>There are many tools for the GIDS applet to work with, <b>CertUtil</b> is a great tool to manage certificates. We also mention this tool to warn you - for windows, disable the CertUtil ability to use the Internet (more on <u>https://www.bleepingcomputer.com/forums/t/674836/locking-down-certutil/</u>)</p><p>Also, we recommend to have a look on <b>javacardos.com</b> for dealing with issues (for example <u>https://www.javacardos.com/javacardforum/viewtopic.php?t=1667</u>)</p>",
   "keys": true,
   "default_selected": false,
   "pgp": "",

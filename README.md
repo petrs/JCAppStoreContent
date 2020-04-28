@@ -21,7 +21,7 @@ The following fields are supported
  - `usage`: a string, required, HTML - styled use swift guide - should at least give stop-by-step installation process and include tutorials if no tutorials are provided in the `url`
  - `keys`: a boolean, default `false`, whether the applet include any sensitive data that will be lost upon deletion (e.g. private keys)
  - `default_selected`: a string, default `""`, AID of the applet to make as deafult selected (original AID, not custom)
- - `pgp`: a string, default `""`, a key identifier or a fingerprint the custom signature was made with
+ - `pgp`: a string, default `""`, a key fingerprint the custom signature was made with
  - `signed_by`: a string, default `""`, a signature author's name, the file with detached signature will be searched for as `[cap file name].cap.[value provided here].sig`
  
  

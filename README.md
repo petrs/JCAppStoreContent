@@ -7,10 +7,10 @@ This is only a card applet storage, parsed by JCAppStore. There are applet cap f
 This file is used to parse the store content. For localization, an info file must be present with `lang` tag of the language the info is translated to. For example, a czech translation would be **info_cz.json**, german **info_de.json**.
 
 The following fields are supported
- - `type`: a string, default `applet` for the applet entity
+ - `type`: a string, default `'applet'` for the applet entity
  - `name`: a string, required, unique applet identifier, should be in lower camel case and consist of the author and instance name
  - `title`: a string, required, applet name as displayed to the user
- - `applet_instance_names`: an array of strings, default `null`, specifies custom applet names and possibly AIDs - if provided the store fills in the new applet AID upon the installation - let's say we have a cap file with one applet instance: 1122334455. We want the applet title to be different from `title` field: `['My Applet']`; in case we want the applet to be installed with different AID, we must use '0x' to tell the parser we are going to provide AID values as well: `['0x', 'My Applet', F120BAC10998AA0100001]`; all instances of the `cap` file must be specified; `0x` can be only as the first element - in that case, all applets must also define custom AID
+ - `applet_instance_names`: an array of strings, default `null`, specifies custom applet names and possibly AIDs - if provided the store fills in the new applet AID upon the installation - let's say we have a cap file with one applet instance: 1122334455. We want the applet title to be different from `title` field: `['My Applet']`; in case we want the applet to be installed with different AID, we must use '0x' to tell the parser we are going to provide AID values as well: `['0x', 'My Applet', 'F120BAC10998AA0100001']`; all instances of the `cap` file must be specified or none; `0x` can be only as the first element - in that case, all applets must also define custom AID
  - `icon`: a string, default `""`, a name of the image to associate with the applet, must be present in the `Resources` folder
  - `latest`: a string, required, the latest version available
  - `versions`: an array of strings, required non-empty, a list of available versions, prefferably sorted - latest as the last one

@@ -6,7 +6,7 @@ This is only a card applet storage, parsed by JCAppStore. There are applet cap f
 ### info_[lang].json
 This file is used to parse the store content. For localization, an info file must be present with `lang` tag of the language the info is translated to. For example, a czech translation would be **info_cz.json**, german **info_de.json**.
 
-The following fields are supported
+All the following fields must be present for each applet instance:
  - `type`: a string, default `'applet'` for the applet entity
  - `name`: a string, required, unique applet identifier, should be in lower camel case and consist of the author and instance name
  - `title`: a string, required, applet name as displayed to the user
@@ -24,4 +24,5 @@ The following fields are supported
  - `pgp`: a string, default `""`, a key fingerprint the custom signature was made with
  - `signed_by`: a string, default `""`, a signature author's name, the file with detached signature will be searched for as `[cap file name].cap.[value provided here].sig`
  
- 
+### Parsing the JSON
+A CLI tool exists to edit content, generate signatures, validate data and manage translations. As a C# course project, it can run on Windows only for now: https://github.com/Aiosa/JCAppStoreParser.

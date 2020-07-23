@@ -1,0 +1,11 @@
+
+javacardx.crypto.Cipher
+ALG_RSA_PKCS1
+ALG_AES_BLOCK_128_CBC_NOPAD
+
+javacard.security.KeyBuilder
+TYPE_AES_TRANSIENT_DESELECT
+TYPE_AES LENGTH_AES_128
+
+javacard.security.KeyPair ALG_RSA_CRT on-card generation
+ALG_RSA_CRT LENGTH_RSA_2048

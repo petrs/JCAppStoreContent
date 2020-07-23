@@ -1,0 +1,10 @@
+
+javacardx.crypto.Cipher
+ALG_RSA_PKCS1
+
+javacard.security.KeyBuilder
+TYPE_RSA_PUBLIC LENGTH_RSA_2048
+TYPE_RSA_CRT_PRIVATE LENGTH_RSA_2048
+
+javacard.security.KeyPair ALG_RSA_CRT on-card generation
+ALG_RSA_CRT LENGTH_RSA_2048

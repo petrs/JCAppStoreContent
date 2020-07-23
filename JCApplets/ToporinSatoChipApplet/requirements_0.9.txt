@@ -1,0 +1,24 @@
+
+javacardx.crypto.Cipher
+ALG_RSA_NOPAD
+ALG_AES_BLOCK_128_CBC_NOPAD
+ALG_AES_BLOCK_128_ECB_NOPAD
+
+javacard.crypto.Signature
+ALG_ECDSA_SHA_256
+
+javacard.security.MessageDigest
+ALG_SHA
+ALG_SHA_256
+
+javacard.security.RandomData
+ALG_SECURE_RANDOM
+
+javacard.security.KeyBuilder
+TYPE_AES LENGTH_AES_128
+TYPE_AES LENGTH_AES_256
+TYPE_RSA_PUBLIC LENGTH_RSA_1024
+TYPE_EC_FP_PRIVATE LENGTH_EC_FP_256
+
+javacard.security.KeyAgreement
+ALG_EC_SVDP_DH_PLAIN

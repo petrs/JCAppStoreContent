@@ -1,0 +1,3 @@
+
+javacard.security.MessageDigest
+ALG_SHA

@@ -1,0 +1,7 @@
+
+javacard.security.MessageDigest
+ALG_SHA
+ALG_SHA_256
+
+javacard.security.RandomData
+ALG_PSEUDO_RANDOM

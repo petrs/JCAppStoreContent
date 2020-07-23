@@ -1,0 +1,13 @@
+
+javacardx.crypto.Cipher
+ALG_DES_CBC_ISO9797_M2
+ALG_RSA_PKCS1
+
+javacard.crypto.Signature
+ALG_DES_MAC8_ISO9797_1_M2_ALG3
+
+javacard.security.RandomData
+ALG_SECURE_RANDOM
+
+javacard.security.KeyBuilder
+TYPE_DES_TRANSIENT_DESELECT

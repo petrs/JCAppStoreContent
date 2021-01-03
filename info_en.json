@@ -1,7 +1,8 @@
 [
    {
       "type":"category",
-      "title":"Utilities"
+      "title":"Utilities",
+      "hidden_by_default": true
    },
    {
       "type":"applet",
@@ -81,7 +82,8 @@
       "keys":false,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": true
    },
    {
       "type":"applet",
@@ -107,11 +109,13 @@
       "keys":false,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": true
    },
    {
       "type":"category",
-      "title":"Digital signing, OpenPGP and mail security"
+      "title":"Digital signing, OpenPGP and mail security",
+      "hidden_by_default": false
    },
    {
       "type":"applet",
@@ -140,7 +144,8 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": false
    },
    {
       "type":"applet",
@@ -169,7 +174,8 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": false
    },
    {
       "type":"applet",
@@ -198,7 +204,8 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": true
    },
    {
       "type":"applet",
@@ -227,11 +234,13 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": true
    },
    {
       "type":"category",
-      "title":"Authentication and access control"
+      "title":"Authentication and access control",
+      "hidden_by_default": false
    },
    {
       "type":"applet",
@@ -263,7 +272,8 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": false
    },
    {
       "type":"applet",
@@ -292,7 +302,8 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": false
    },
    {
       "type":"applet",
@@ -323,7 +334,8 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": true
    },
    {
       "type":"applet",
@@ -350,11 +362,13 @@
       "keys":false,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": true
    },
    {
       "type":"category",
-      "title":"Electronic passports and citizen ID"
+      "title":"Electronic passports and citizen ID",
+      "hidden_by_default": true
    },
    {
       "type":"applet",
@@ -383,7 +397,8 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": true
    },
    {
       "type":"applet",
@@ -411,11 +426,13 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": true
    },
    {
       "type":"category",
-      "title":"Payment applets (EMV, bitcoin wallets..)"
+      "title":"Payment applets (EMV, bitcoin wallets..)",
+      "hidden_by_default": false
    },
    {
       "type":"applet",
@@ -442,7 +459,8 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": true
    },
    {
       "type":"applet",
@@ -480,11 +498,13 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": false
    },
    {
       "type":"category",
-      "title":"Password management"
+      "title":"Password management",
+      "hidden_by_default": true
    },
    {
       "type":"applet",
@@ -512,6 +532,7 @@
       "keys":true,
       "default_selected":"",
       "pgp":"",
-      "signed_by":""
+      "signed_by":"",
+      "hidden_by_default": true
    }
 ]

@@ -1,0 +1,34 @@
+    <article class="markdown-body"><h2 id="how-to-use-the-applet"><a class="header-link" href="#how-to-use-the-applet"></a>How to use the applet</h2>
+<p>The installation should be simple without any required information. All necessary links are provided below. 
+There are many host applications and many tools to work with, but the actual setup is pretty difficult.</p>
+<h3 id="card-initialization"><a class="header-link" href="#card-initialization"></a>Card Initialization</h3>
+<p>To easy setup the applet, download GIDS Initialization tool. Setup your PIN, admin key (to unlock the card and reset the PIN). Serial number is generated for you - no need to change it. Run in only once! 
+If you are advanced user and prefer to do things yourself, follow <a href="https://github.com/OpenSC/OpenSC/wiki/Quick-Start-with-OpenSC">https://github.com/OpenSC/OpenSC/wiki/Quick-Start-with-OpenSC</a> tutorial how to initialize the card using OpenSC (command line only).</p>
+<h3 id="personalisation"><a class="header-link" href="#personalisation"></a>Personalisation</h3>
+<p>The applet now needs a certificate to work with. First, you need a private key and its certificate (document that pairs the key with your identity). The easiest way is to use openSC GUI (in links below):</p>
+<ul class="list">
+<li>Install the tool and create a new database (set name, location where to save and password to protect it).</li>
+<li>Create (or import if you have already) a private key. If you don&#39;t know which one, we recommend RSA 2048+. Beware, your card must support the private key type (during applet installation, a 
+warning may be shown with compatibility problems if JCAlgTest result is known for your card - for example, warning may show &#39;unsuppored RSA 4096&#39; - in that case, a certificate of such key won&#39;t be loadable onto your card).</li>
+<li>Create <em>x509</em> certificate:<ul class="list">
+<li><strong>Source tab</strong>: SHA 256/512 should suffice.</li>
+<li><strong>Subject tab</strong>: check which private key is used for the certificate creation at the bottom, and also fill the data - name and email at least. These fields want lowerCamelCase input without spaces.</li>
+<li>**Extensions tab: select the certificate validity time range - for infinite validity, select <em>no well defined expiration</em>.</li>
+</ul>
+</li>
+<li>Export the certificate as PKCS#12 structure (.p12/.pfx file). Select a password to protect the exported certificate.</li>
+<li>Upload the exported certificate using either certutil or OpenSC. Certutil is a part of windows, OpenSC must be installed from GitHub. You can either delete the database created in the first step, 
+or move it to offline environment for backup.</li>
+</ul>
+<h4 id="import-cert-using-certutil"><a class="header-link" href="#import-cert-using-certutil"></a>Import cert using certutil</h4>
+<p>There are many tools for the GIDS applet to work with, <strong>CertUtil</strong> is a great tool to manage certificates. We also mention this tool to warn you - for windows, disable the CertUtil ability to use the Internet 
+(more on <a href="https://www.bleepingcomputer.com/forums/t/674836/locking-down-certutil/">https://www.bleepingcomputer.com/forums/t/674836/locking-down-certutil/</a>)</p>
+<p>Open command line (Win+R and type <code>cmd</code>) and navigate to where your certificate was exported (for command line use see Help menu). Run following command:</p>
+<pre class="hljs"><code>certutil -csp <span class="hljs-string">"Microsoft Base Smart Card Crypto Provider"</span> -importpfx <span class="hljs-params">&lt;filename&gt;</span></code></pre><p>Where <filename> is the name of the exported certificate, for example <strong>my_certificate.p12</strong>. The -csp argument is the crypto provider name, if it does not work for you, find its proper name in registry 
+(tutorial here: <a href="https://www.mysmartlogon.com/knowledge-base/save-pfxp12-file-smart-card/)">https://www.mysmartlogon.com/knowledge-base/save-pfxp12-file-smart-card/)</a>.</p>
+<h5 id="upload-cert-using-opensc"><a class="header-link" href="#upload-cert-using-opensc"></a>Upload cert using OpenSC</h5>
+<p>Use following command to upload the certificate (you must provide the path to the tool if th command is not recognized, for example <em>&quot;C:\Program Files\OpenSC Project\OpenSC\tools\pkcs15-init.exe&quot; --auth-id ...</em>): </p>
+<pre class="hljs"><code><span class="hljs-comment">pkcs15</span><span class="hljs-literal">-</span><span class="hljs-comment">init</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">auth</span><span class="hljs-literal">-</span><span class="hljs-comment">id</span> <span class="hljs-comment">80</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">pin</span> &lt;<span class="hljs-comment">YOUR</span> <span class="hljs-comment">PIN</span>&gt; <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">verify</span><span class="hljs-literal">-</span><span class="hljs-comment">pin</span> <span class="hljs-literal">-</span><span class="hljs-comment">f</span> <span class="hljs-comment">PKCS12</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">passphrase</span> &lt;<span class="hljs-comment">PASSWORD</span> <span class="hljs-comment">USED</span> <span class="hljs-comment">FOR</span> <span class="hljs-comment">EXPORT</span>&gt; <span class="hljs-literal">-</span><span class="hljs-comment">S</span> &lt;<span class="hljs-comment">PATH</span> <span class="hljs-comment">TO</span> <span class="hljs-comment">THE</span> <span class="hljs-comment">CERTIFICATE</span> <span class="hljs-comment">FILE</span>&gt; <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">key</span><span class="hljs-literal">-</span><span class="hljs-comment">usage=decrypt</span></code></pre><h3 id="applet-usage"><a class="header-link" href="#applet-usage"></a>Applet usage</h3>
+<p>On Windows, the applet is used natively - for locking the computer, for signing Word documents (directly from Word) etc. - any singatures, authentications or encryptions can be performed instantly.</p>
+<p>Also, we recommend to have a look on <strong>javacardos.com</strong> forum for dealing with issues (for example <a href="https://www.javacardos.com/javacardforum/viewtopic.php?t=1667)">https://www.javacardos.com/javacardforum/viewtopic.php?t=1667)</a>.</p>
+    </article>

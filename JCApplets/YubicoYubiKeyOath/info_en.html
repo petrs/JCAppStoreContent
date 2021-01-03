@@ -1,0 +1,13 @@
+    <article class="markdown-body"><h2 id="how-to-use-the-applet"><a class="header-link" href="#how-to-use-the-applet"></a>How to use the applet</h2>
+<p>Installation does not require any information. You need android phone with NFC for the applet to use. Although this applet claims to work with either yubico authenticator for desktop or 
+android, we were able to succesfully run the yubico on android only (for more info see <a href="https://github.com/Yubico/ykneo-oath/issues/20)">https://github.com/Yubico/ykneo-oath/issues/20)</a>. 
+Don&#39;t be confused; the android app will not recognize your card straight away. First, you have to ad a an account. Do not ad an account unless you know for which you want to enable 2FA first. 
+More details on this in HOTP/TOTP section. The &#39;save action&#39; will require you to use a card as the actual credentials are to be transfered onto applet. After that, 
+the applet is initialized with the entries you provided and ready to perform HOTP or TOTP based on your account settings.</p>
+<h4 id="hotp/totp"><a class="header-link" href="#hotp/totp"></a>HOTP/TOTP</h4>
+<p>is a one-time-password generator protocol that relies on counter (HOTP) or a timestamp (TOTP). Counter is increased every time new password is generated, the timestamp 
+includes a time limit the password is valid within (30/60s).</p>
+<p>The one-time passwords are good for 2FA (two factor) authentication. More information on how to proceed can be found on the websites that support 2FA in the links below (linkedIn, for example: 
+<a href="https://www.linkedin.com/help/linkedin/answer/531)">https://www.linkedin.com/help/linkedin/answer/531)</a>. For the host app account creation, you have to have your account existing - and add the two factor authentication feature to it by adding 
+your account to android app that initializes the applet. After succesful setup, the authentication on the webpage will require you to generate and submit a one time key (that was created on the card).</p>
+    </article>

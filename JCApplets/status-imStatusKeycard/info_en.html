@@ -1,0 +1,22 @@
+    <article class="markdown-body"><h2 id="how-to-use-the-applet"><a class="header-link" href="#how-to-use-the-applet"></a>How to use the applet</h2>
+<p>The installation should be simple. There are two applets available: KeyCard and NDEF tag. KeyCard can be used as a key holder or bitcoin wallet. 
+KeyCard can be used with Status app, WallETH or Gnosis. NDEF tag is compatible with any NDEF writer/reader application (for example on Google Play).</p>
+<h3 id="keycard-applet-usage"><a class="header-link" href="#keycard-applet-usage"></a>Keycard Applet usage</h3>
+<h4 id="status-app"><a class="header-link" href="#status-app"></a>Status app</h4>
+<p>Status is secure messenger, browser and ethernum bitcoin wallet. The KeyCard can be inicialized upon generating the keys - download Status app and generate new keys. 
+Then, store them on your card (instead of on your phone) with KeyCard installed. This will cause the application to require the card for authentication and more importantly - 
+your keys are safer.</p>
+<h4 id="walleth"><a class="header-link" href="#walleth"></a>WallETH</h4>
+<p>WallETH is ethernum bitcoin wallet, much less intuitive than Status app. It is necessary personalise the applet first (using CLI app or Status app).</p>
+<p><strong>CLI personalise</strong>: download the latest release of host application from its repository in the links below. </p>
+<p>The app can communicate with the applet; it can also install it (but it will install all the applets and won&#39;t let you choose unlike JCAppStore). 
+Nevertheless, the app is still needed for further applet initialization.</p>
+<p>Using CLI initializer: in command line, either navigate to the folder where you&#39;ve downloaded the host app executable, or make sure it is in a folder contained in your PATH environment variable (windows - unlikely in a <code>PATH</code>, 
+either add it manually or go to the installation folder, unix - likely in <code>/usr/bin</code>) and run following command: <code>keycard init -l debug</code>. More info can be found in the app repo readme file.</p>
+<p>Once initialized, download any app that supports hardware wallets - smart cards. WallETH is an android ethereum wallet that supports a smart card pairing - simply select 
+&#39;NFC smart card&#39; for new account creation once app starts, then &#39;add initialized wallet&#39; as we initialized the walled just before. Then, provide PIN and pairing code you&#39;ve received from keycard 
+client app and tap the card to your phone.</p>
+<h3 id="ndef-tag-usage"><a class="header-link" href="#ndef-tag-usage"></a>NDEF tag usage</h3>
+<p>NDEF tokens are compatible with any android device equipped with NFC. 
+Just download any NDEF tag application from Google Play to use. Apple phones should work similarly.</p>
+    </article>

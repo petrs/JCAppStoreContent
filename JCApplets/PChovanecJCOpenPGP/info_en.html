@@ -1,0 +1,31 @@
+    <article class="markdown-body"><h2 id="how-to-use-the-applet"><a class="header-link" href="#how-to-use-the-applet"></a>How to use the applet</h2>
+<p>No installation parameters are required. You can use this applet in GnuPG (similarly as the Yubico OpenPGP applet)</p>
+<h3 id="default-values"><a class="header-link" href="#default-values"></a>Default values</h3>
+<p>The applet is configured with the following default values:</p>
+<ul class="list">
+<li>Admin PIN is 12345678</li>
+<li>User PIN is 12345678</li>
+</ul>
+<h4 id="gnupg"><a class="header-link" href="#gnupg"></a>GnuPG</h4>
+<p>How to change your admin pin step by step:</p>
+<ol class="list">
+<li>Download GnuPG (this is used by JCAppStore as well, so you probably have it).</li>
+<li>Use command line to launch GnuPG in card edit mode: <code>gpg --card-edit</code></li>
+<li>Enter command <code>admin</code> to enable utility tools.</li>
+<li>Enter command <code>passwd</code> to change your admin PIN.</li>
+</ol>
+<p>Upload your private key to the card (<strong>this is destructive action!</strong>):</p>
+<ol class="list">
+<li>use <code>gpg --list-keys</code> to see which keys you have available</li>
+<li>type in <code>gpg --edit-key [key id]</code> where key id is an id for the key you want to move (id select from previous command)</li>
+<li>use <code>toggle</code> to switch to the private key part</li>
+<li>use <code>keytocard</code> to upload the private key part onto card <em>destructively</em></li>
+<li>follow the GnuPG instructions</li>
+</ol>
+<p>That&#39;s it! For more info about available commands in card edit mode type <code>help</code>. 
+Full tutorials are available at <a href="https://www.gnupg.org/documentation/guides.html">https://www.gnupg.org/documentation/guides.html</a>.
+We recommend to search for &#39;GnuPG [action I want to do]&#39; rather than reading the documentation, for example &#39;gnupg.org import key to card&#39; yields 
+<a href="https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/">https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/</a></p>
+<h4 id="openkeychain"><a class="header-link" href="#openkeychain"></a>OpenKeychain</h4>
+<p>Supported starting from OpenKeychain version 4.2. The secure messaging of the SmartPGP applet is fully supported in OpenKeychain. See links below for more information on the setup process.</p>
+    </article>

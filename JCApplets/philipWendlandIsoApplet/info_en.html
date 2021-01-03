@@ -1,0 +1,13 @@
+    <article class="markdown-body"><h2 id="how-to-use-the-applet"><a class="header-link" href="#how-to-use-the-applet"></a>How to use the applet</h2>
+<p>No installation parameters are required. The aplet can be communicated with using OpenSC tool (command line). OpenSC provides various functionality for many various applets, only
+ some of the commands will work. For example, in the description you can see PKCS#15. Then you need to use openSC tool for PKCS#15.</p>
+<h4 id="checking-installation"><a class="header-link" href="#checking-installation"></a>Checking installation</h4>
+<p>Send <code>opensc-tool --name</code> to see whether OpenSC recognizes the card. You should see &#39;Javacard with IsoApplet&#39; written in the output.</p>
+<h3 id="applet-initialization"><a class="header-link" href="#applet-initialization"></a>Applet initialization</h3>
+<p>Use <code>pkcs15-init -C</code> command and follow the instructions. More info in the personalisation link.</p>
+<h3 id="applet-details"><a class="header-link" href="#applet-details"></a>Applet details</h3>
+<p>Use <code>pkcs15-tool --list-info</code> to get details about the IsoApplet.</p>
+<h3 id="upload-your-key-onto-card"><a class="header-link" href="#upload-your-key-onto-card"></a>Upload your key onto card</h3>
+<p>Send <code>pkcs15-init -S &lt;your key file&gt; --auth-id &lt;your pin id&gt;</code>. The key should be in PEM or DER format. Your PIN id can be displayed using <code>pkcs15-tool --list-pins</code> - see the ID column.</p>
+<p>See also other useful tutorials in the links below.</p>
+    </article>

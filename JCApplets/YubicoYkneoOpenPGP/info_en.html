@@ -1,0 +1,16 @@
+     <article class="markdown-body"><h2 id="how-to-use-the-applet"><a class="header-link" href="#how-to-use-the-applet"></a>How to use the applet</h2>
+<p>The installation should be simple without any required information. However, the applet uses advanced functionality and some older cards will not be able to install it. The usage - altough with host application - may be difficult if you are not used to work with command line. (see the turorials in link below). </p>
+<p>The OpenPGP Card applet is typically used through GnuPG (<a href="https://www.gnupg.org/">https://www.gnupg.org/</a>) so we refer to its documentation for the full reference. The default PIN set is <b><code>123456</code></b>; and the default admin PIN is <b><code>12345678</code></b>. We have tutorials on specific topics in at developers.yubico.com/PGP, for example card editing and
+ key import. </p>
+<p> How to change your admin pin step by step:</p>
+<ul class="list">
+<li>Download GnuPG (this is used by JCAppStore as well, so you probably have it)</li>
+<li><p>Use command line to launch GnuPG in card edit mode: <code>gpg --card-edit</code></p>
+</li>
+<li><p>enter command <strong>admin</strong> to enable utility tools</p>
+</li>
+<li>enter command <strong>passwd</strong> to change your admin PIN</li>
+</ul>
+<p>For more info about available commands in card edit mode type <strong>help</strong>. Full tutorials are available at <em><a href="https://www.gnupg.org/documentation/guides.html">https://www.gnupg.org/documentation/guides.html</a></em>. </p>
+<p>We recommend to search for &#39;GnuPG [action I want to do]&#39; rather than reading the documentation, for example &#39;gnupg.org import key to card&#39; yields <em><a href="https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/">https://blog.josefsson.org/2014/06/23/offline-gnupg-master-key-and-subkeys-on-yubikey-neo-smartcard/</a></em>.</p>
+    </article>

@@ -1,0 +1,8 @@
+    <article class="markdown-body"><h2 id="how-to-use-the-applet"><a class="header-link" href="#how-to-use-the-applet"></a>How to use the applet</h2>
+<p>Install the applet - no installation parameters required. Once installed, you can use an android app to upload your keepass credentials onto card. The link to the app along with detailed tutorial 
+can be found in the web links section below</p>
+<p><strong>Note:</strong> In the tutorial, you can skip almost the whole &quot;pyApduTool&quot; section as the store do this for you automatically. 
+Only thing you have to do yourself is to send custom APDU command to the applet once installed - go to your card and select the KeepasNFC applet. Click 
+&#39;send custom command&#39; and pass command <strong>B075000000</strong> to tell it to generate new keypair. Now, the applet has generated the keypair (assuming the card master key is default 4041..4F, e.g. we didn&#39;t have to provide it when using gp).</p>
+<p><strong>Caveat:</strong> This applet is not considered to be ultimately secure (for common usage will suffice though): <a href="http://javacardos.com/javacardforum/viewtopic.php?t=998#p3043">http://javacardos.com/javacardforum/viewtopic.php?t=998#p3043</a>.</p>
+    </article>
